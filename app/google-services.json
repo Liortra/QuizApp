@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "1057878990941",
+    "firebase_url": "https://quizapp-29c0d-default-rtdb.firebaseio.com",
     "project_id": "quizapp-29c0d",
     "storage_bucket": "quizapp-29c0d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1057878990941:android:ae873bc4f87c47caf62db4",
+        "mobilesdk_app_id": "1:1057878990941:android:c1e2b3ae1a885a36f62db4",
         "android_client_info": {
-          "package_name": "com.android.application"
+          "package_name": "com.example.quizapp"
         }
       },
       "oauth_client": [
