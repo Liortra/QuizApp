@@ -16,6 +16,7 @@ import com.example.quizapp.R;
 import com.example.quizapp.activities.home.HomeActivity;
 import com.example.quizapp.model.Player;
 import com.example.quizapp.service.firebase.FirebaseDB;
+import com.example.quizapp.utils.Common;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -64,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(login.getPassword().equals(password)){
                             Toast.makeText(LoginActivity.this,"Success Login",Toast.LENGTH_SHORT).show();
                             Intent homeActivity = new Intent(LoginActivity.this,HomeActivity.class);
+                            Common.currrentPlayer = login;
                             startActivity(homeActivity);
                             finish();
                         }

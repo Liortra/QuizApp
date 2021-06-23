@@ -1,19 +1,22 @@
 package com.example.quizapp.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.quizapp.Interface.ItemClickListener;
 import com.example.quizapp.R;
+import com.example.quizapp.activities.game.StartActivity;
 import com.example.quizapp.model.Category;
 import com.example.quizapp.service.firebase.FirebaseDB;
+import com.example.quizapp.utils.Common;
 import com.example.quizapp.viewHolder.CategoryViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.squareup.picasso.Picasso;
@@ -67,8 +70,15 @@ public class CategoryFragment extends Fragment {
                 categoryViewHolder.categoryName.setText(category.getName());
                 Picasso.get().load(category.getImage()).into(categoryViewHolder.categoryImage);
 
-                categoryViewHolder.setItemClickListener((view, position, isLongClick) ->
-                        Toast.makeText(getActivity(),String.format("%s|%s",adapter.getRef(i).getKey(),category.getName()),Toast.LENGTH_SHORT).show());
+                categoryViewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        Intent startGame = new Intent(getActivity(),StartActivity.class);
+                        Common.categoryId = adapter.getRef(position).getKey();
+                        startActivity(startGame);
+                    }
+                });
+
             }
         };
         adapter.notifyDataSetChanged();
