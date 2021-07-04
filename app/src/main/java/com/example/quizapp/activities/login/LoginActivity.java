@@ -1,6 +1,5 @@
 package com.example.quizapp.activities.login;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -65,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(login.getPassword().equals(password)){
                             Toast.makeText(LoginActivity.this,"Success Login",Toast.LENGTH_SHORT).show();
                             Intent homeActivity = new Intent(LoginActivity.this,HomeActivity.class);
-                            Common.currrentPlayer = login;
+                            Common.currentPlayer = login;
                             startActivity(homeActivity);
                             finish();
                         }

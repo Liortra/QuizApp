@@ -70,13 +70,11 @@ public class CategoryFragment extends Fragment {
                 categoryViewHolder.categoryName.setText(category.getName());
                 Picasso.get().load(category.getImage()).into(categoryViewHolder.categoryImage);
 
-                categoryViewHolder.setItemClickListener(new ItemClickListener() {
-                    @Override
-                    public void onClick(View view, int position, boolean isLongClick) {
-                        Intent startGame = new Intent(getActivity(),StartActivity.class);
-                        Common.categoryId = adapter.getRef(position).getKey();
-                        startActivity(startGame);
-                    }
+                categoryViewHolder.setItemClickListener((view, position, isLongClick) -> {
+                    Intent startGame = new Intent(getActivity(),StartActivity.class);
+                    Common.categoryId = adapter.getRef(position).getKey();
+                    Common.categoryName = category.getName();
+                    startActivity(startGame);
                 });
 
             }

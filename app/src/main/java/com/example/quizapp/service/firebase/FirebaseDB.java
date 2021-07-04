@@ -12,6 +12,7 @@ public class FirebaseDB {
     private DatabaseReference categories;
     private DatabaseReference questions;
     private DatabaseReference question_score;
+    private DatabaseReference rankingTbl;
 
     private FirebaseDB(){
         firebaseAuth = FirebaseAuth.getInstance();
@@ -20,7 +21,7 @@ public class FirebaseDB {
         categories = database.getReference("Category");
         questions = database.getReference("Questions");
         question_score = database.getReference("Question_Score");
-
+        rankingTbl = database.getReference("Ranking");
     }
 
     public static FirebaseDB getInstance(){
@@ -53,4 +54,7 @@ public class FirebaseDB {
         return question_score;
     }
 
+    public DatabaseReference getRankingTbl() {
+        return rankingTbl;
+    }
 }

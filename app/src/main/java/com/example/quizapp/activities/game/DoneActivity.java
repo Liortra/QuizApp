@@ -48,10 +48,12 @@ public class DoneActivity extends AppCompatActivity {
             getTxtResultQuestion.setText(String.format("PASSED %d/%d", correctAnswer,totalQuestion));
             progressBar.setMax(totalQuestion);
             progressBar.setProgress(correctAnswer);
-            firebaseDB.getQuestion_score().child(String.format("%s_%s", Common.currrentPlayer.getPlayerName(), Common.categoryId))
-                    .setValue(new QuestionScore(String.format("%s_%s", Common.currrentPlayer.getPlayerName(), Common.categoryId ),
-                            Common.currrentPlayer.getPlayerName(),
-                            String.valueOf(score)));
+            firebaseDB.getQuestion_score().child(String.format("%s_%s", Common.currentPlayer.getPlayerName(), Common.categoryId))
+                    .setValue(new QuestionScore(String.format("%s_%s", Common.currentPlayer.getPlayerName(), Common.categoryId ),
+                            Common.currentPlayer.getPlayerName(),
+                            String.valueOf(score),
+                            Common.categoryId,
+                            Common.categoryName));
         }
     }
     private void listeners(){
