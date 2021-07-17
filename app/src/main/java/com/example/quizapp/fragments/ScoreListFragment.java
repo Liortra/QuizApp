@@ -67,6 +67,8 @@ public class ScoreListFragment extends Fragment {
     }
 
     private void getScores() {
+        if(!Common.questionScoreList.isEmpty())
+            Common.questionScoreList.clear();
         Call<List<QuestionScore>> call = restInterface.getAllQuestionsScores(Common.currentPlayer.getPlayerName());
         call.enqueue(new Callback<List<QuestionScore>>() {
             @Override
@@ -74,8 +76,7 @@ public class ScoreListFragment extends Fragment {
                 if(response.isSuccessful() && response.body() != null){
                     Common.questionScoreList.addAll(response.body());
                     scoreListAdapter.setList(Common.questionScoreList);
-                }else
-                    Toast.makeText(getContext(),"You don't have scores..",Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
