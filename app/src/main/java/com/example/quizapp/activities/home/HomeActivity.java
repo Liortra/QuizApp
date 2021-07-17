@@ -1,16 +1,14 @@
 package com.example.quizapp.activities.home;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.quizapp.R;
 import com.example.quizapp.fragments.CategoryFragment;
-import com.example.quizapp.fragments.RankingFragment;
+import com.example.quizapp.fragments.ScoreListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -31,23 +29,20 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void listeners() {
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
-                switch (item.getItemId()){
-                    case R.id.action_category:
-                        selectedFragment = CategoryFragment.newInstance();
-                        break;
-                    case R.id.action_ranking:
-                        selectedFragment = RankingFragment.newInstance();
-                        break;
-                }
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout,selectedFragment);
-                transaction.commit();
-                return true;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+            switch (item.getItemId()){
+                case R.id.action_category:
+                    selectedFragment = CategoryFragment.newInstance();
+                    break;
+                case R.id.action_ranking:
+                    selectedFragment = ScoreListFragment.newInstance();
+                    break;
             }
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_layout,selectedFragment);
+            transaction.commit();
+            return true;
         });
         setDefaultFragment();
     }

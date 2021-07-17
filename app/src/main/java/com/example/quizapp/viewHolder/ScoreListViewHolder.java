@@ -8,13 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizapp.R;
 
-public class ScoreDetailViewHolder extends RecyclerView.ViewHolder {
+public class ScoreListViewHolder extends RecyclerView.ViewHolder {
 
     public TextView txt_name,txt_score;
 
-    public ScoreDetailViewHolder(@NonNull View itemView) {
+    public ScoreListViewHolder(@NonNull View itemView) {
         super(itemView);
-
         txt_name = itemView.findViewById(R.id.txt_name);
         txt_score = itemView.findViewById(R.id.txt_score);
     }

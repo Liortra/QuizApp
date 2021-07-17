@@ -1,84 +1,99 @@
 package com.example.quizapp.model;
 
 public class Question {
-    private String Question,AnswerA,AnswerB,AnswerC,AnswerD,CorrectAnswer, CategoryId, IsImageQuestion;
+    private String question;
+    private String answerA;
+    private String answerB;
+    private String answerC;
+    private String answerD;
+    private String correctAnswer;
+    private String categoryId;
+    private String isImageQuestion;
+    private String questionId;
 
     public Question() {
     }
 
     public Question(String question, String answerA, String answerB, String answerC, String answerD,
-                    String correctAnswer, String categoryId, String isImageQuestion) {
-        Question = question;
-        AnswerA = answerA;
-        AnswerB = answerB;
-        AnswerC = answerC;
-        AnswerD = answerD;
-        CorrectAnswer = correctAnswer;
-        this.CategoryId = categoryId;
-        this.IsImageQuestion = isImageQuestion;
+                    String correctAnswer, String categoryId, String isImageQuestion, String questionId) {
+        this.question = question;
+        this.answerA = answerA;
+        this.answerB = answerB;
+        this.answerC = answerC;
+        this.answerD = answerD;
+        this.correctAnswer = correctAnswer;
+        this.categoryId = categoryId;
+        this.isImageQuestion = isImageQuestion;
+        this.questionId = questionId;
     }
 
     public String getQuestion() {
-        return Question;
+        return question;
     }
 
     public void setQuestion(String question) {
-        Question = question;
+        this.question = question;
     }
 
     public String getAnswerA() {
-        return AnswerA;
+        return answerA;
     }
 
     public void setAnswerA(String answerA) {
-        AnswerA = answerA;
+        this.answerA = answerA;
     }
 
     public String getAnswerB() {
-        return AnswerB;
+        return answerB;
     }
 
     public void setAnswerB(String answerB) {
-        AnswerB = answerB;
+        this.answerB = answerB;
     }
 
     public String getAnswerC() {
-        return AnswerC;
+        return answerC;
     }
 
     public void setAnswerC(String answerC) {
-        AnswerC = answerC;
+        this.answerC = answerC;
     }
 
     public String getAnswerD() {
-        return AnswerD;
+        return answerD;
     }
 
     public void setAnswerD(String answerD) {
-        AnswerD = answerD;
+        this.answerD = answerD;
     }
 
     public String getCorrectAnswer() {
-        return CorrectAnswer;
+        return correctAnswer;
     }
 
     public void setCorrectAnswer(String correctAnswer) {
-        CorrectAnswer = correctAnswer;
+        this.correctAnswer = correctAnswer;
     }
 
     public String getCategoryId() {
-        return CategoryId;
+        return categoryId;
     }
 
     public void setCategoryId(String categoryId) {
-        this.CategoryId = categoryId;
+        this.categoryId = categoryId;
     }
 
     public String getIsImageQuestion() {
-        return IsImageQuestion;
+        return isImageQuestion;
     }
 
     public void setIsImageQuestion(String isImageQuestion) {
-        this.IsImageQuestion = isImageQuestion;
+        this.isImageQuestion = isImageQuestion;
+    }
+
+    public String getQuestionId() { return questionId; }
+
+    public void setQuestionId(String questionId) {
+        this.questionId = questionId;
     }
 }
