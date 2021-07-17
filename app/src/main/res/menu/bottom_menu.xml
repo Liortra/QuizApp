@@ -10,7 +10,7 @@
 
     <item android:id="@+id/action_ranking"
         android:enabled="true"
-        android:title="Ranking"
+        android:title="Score List"
         android:icon="@drawable/ic_baseline_star_24"
         app:showAsAction="ifRoom"/>
 

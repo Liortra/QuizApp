@@ -1,62 +1,62 @@
 package com.example.quizapp.model;
 
 public class QuestionScore {
-    private String Question_Score;
-    private String Player;
-    private String Score;
-    private String CategoryId;
-    private String CategoryName;
+    private String questionScore;
+    private String player;
+    private String score;
+    private String categoryId;
+    private String categoryName;
 
     public QuestionScore() {
 
     }
 
-    public QuestionScore(String question_Score, String player, String score, String categoryId, String categoryName) {
-        Question_Score = question_Score;
-        Player = player;
-        Score = score;
-        CategoryId = categoryId;
-        CategoryName = categoryName;
+    public QuestionScore(String questionScore, String player, String score, String categoryId, String categoryName) {
+        this.questionScore = questionScore;
+        this.player = player;
+        this.score = score;
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
     }
 
-    public String getQuestion_Score() {
-        return Question_Score;
+    public String getQuestionScore() {
+        return questionScore;
     }
 
-    public void setQuestion_Score(String question_Score) {
-        Question_Score = question_Score;
+    public void setQuestionScore(String questionScore) {
+        this.questionScore = questionScore;
     }
 
     public String getPlayer() {
-        return Player;
+        return player;
     }
 
     public void setPlayer(String player) {
-        Player = player;
+        this.player = player;
     }
 
     public String getScore() {
-        return Score;
+        return score;
     }
 
     public void setScore(String score) {
-        Score = score;
+        this.score = score;
     }
 
     public String getCategoryId() {
-        return CategoryId;
+        return categoryId;
     }
 
     public void setCategoryId(String categoryId) {
-        CategoryId = categoryId;
+        this.categoryId = categoryId;
     }
 
     public String getCategoryName() {
-        return CategoryName;
+        return categoryName;
     }
 
     public void setCategoryName(String categoryName) {
-        CategoryName = categoryName;
+        this.categoryName = categoryName;
     }
 }
 
