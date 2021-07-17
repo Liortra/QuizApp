@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_baseline_question_answer_24"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/action_ranking"
+    <item android:id="@+id/action_score_list"
         android:enabled="true"
         android:title="Score List"
         android:icon="@drawable/ic_baseline_star_24"

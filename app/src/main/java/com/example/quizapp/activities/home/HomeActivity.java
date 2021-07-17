@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.action_category:
                     selectedFragment = CategoryFragment.newInstance();
                     break;
-                case R.id.action_ranking:
+                case R.id.action_score_list:
                     selectedFragment = ScoreListFragment.newInstance();
                     break;
             }
