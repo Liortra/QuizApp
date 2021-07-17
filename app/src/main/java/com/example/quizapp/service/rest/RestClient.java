@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RestClient {
 
     //const
-    public static final String ipAndPort = "192.168.1.197:4444";//"ipconfig:port";
+    public static final String ipAndPort = "";//"ipconfig:port";
     private static String BASE_URL = "http://" + RestClient.ipAndPort;
     private static Retrofit retrofit;
 
